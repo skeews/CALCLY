@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calcly - Free Calculators & Converters</title>
+
+    <link rel="stylesheet" href="styl.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container nav">
+
+        <div class="logo">Calcly</div>
+
+        <div class="nav-text">
+            Free calculators & converters
+        </div>
+
+    </div>
+</header>
+
+
+<!-- =========================
+     HOME PAGE
+========================= -->
+
+<main class="container" id="homePage">
+
+    <section class="hero">
+
+        <h1>
+            Calculate anything.<br>
+            In seconds.
+        </h1>
+
+        <p>
+            Simple, fast and free calculators and converters
+            for everyday life.
+        </p>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                placeholder="What do you want to calculate?"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CALCULATORS
+    ========================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Popular Calculators
+        </h2>
+
+        <p class="section-subtitle">
+            Quick tools for everyday calculations.
+        </p>
+
+
+        <div class="cards">
+
+
+            <!-- Percentage -->
+
+            <div
+                class="card"
+                onclick="openPercentageCalculator()"
+            >
+
+                <div class="card-icon">
+                    %
+                </div>
+
+                <h3>
+                    Percentage Calculator
+                </h3>
+
+                <p>
+                    Calculate percentages, increases and decreases.
+                </p>
+
+            </div>
+
+
+            <!-- Age -->
+
+            <div
+                class="card"
+                onclick="openAgeCalculator()"
+            >
+
+                <div class="card-icon">
+                    🎂
+                </div>
+
+                <h3>
+                    Age Calculator
+                </h3>
+
+                <p>
+                    Calculate your exact age in years, months and days.
+                </p>
+
+            </div>
+
+
+            <!-- Date -->
+
+            <div
+                class="card"
+                onclick="openDateCalculator()"
+            >
+
+                <div class="card-icon">
+                    📅
+                </div>
+
+                <h3>
+                    Date Calculator
+                </h3>
+
+                <p>
+                    Add or subtract days, weeks and months from a date.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONVERTERS
+    ========================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Converters
+        </h2>
+
+        <p class="section-subtitle">
+            Convert units quickly and easily.
+        </p>
+
+
+        <div class="cards">
+
+
+            <!-- Time -->
+
+            <div
+                class="card"
+                onclick="openTimeConverter()"
+            >
+
+                <div class="card-icon">
+                    ⏱️
+                </div>
+
+                <h3>
+                    Time Converter
+                </h3>
+
+                <p>
+                    Convert minutes, hours, days and weeks instantly.
+                </p>
+
+            </div>
+
+
+            <!-- Weight -->
+
+            <div
+                class="card"
+                onclick="openWeightConverter()"
+            >
+
+                <div class="card-icon">
+                    ⚖️
+                </div>
+
+                <h3>
+                    Weight Converter
+                </h3>
+
+                <p>
+                    Convert kilograms, pounds, grams and more.
+                </p>
+
+            </div>
+
+
+            <!-- Length -->
+
+            <div
+                class="card"
+                onclick="openLengthConverter()"
+            >
+
+                <div class="card-icon">
+                    📏
+                </div>
+
+                <h3>
+                    Length Converter
+                </h3>
+
+                <p>
+                    Convert meters, feet, inches, miles and more.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- POPULAR SEARCHES -->
+
+    <div class="popular">
+
+        <h3 class="popular-title">
+            Popular searches
+        </h3>
+
+        <div class="tags">
+
+            <span class="tag">
+                600 minutes to hours
+            </span>
+
+            <span class="tag">
+                100 days to weeks
+            </span>
+
+            <span class="tag">
+                50 kg to lbs
+            </span>
+
+            <span class="tag">
+                20% of 500
+            </span>
+
+            <span class="tag">
+                days between dates
+            </span>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- =========================
+     PERCENTAGE CALCULATOR
+========================= -->
+
+<div
+    id="percentageCalculator"
+    class="calculator-page"
+>
+
+    <div class="calculator-container">
+
+        <button
+            class="back-button"
+            onclick="closePercentageCalculator()"
+        >
+            ← Back
+        </button>
+
+        <h1>
+            Percentage Calculator
+        </h1>
+
+        <p>
+            Calculate percentages quickly and easily.
+        </p>
+
+
+        <div class="calc-box">
+
+            <h2>
+                What is X% of Y?
+            </h2>
+
+            <div class="inputs">
+
+                <input
+                    type="number"
+                    id="percent"
+                    placeholder="Percentage"
+                >
+
+                <span>% of</span>
+
+                <input
+                    type="number"
+                    id="number"
+                    placeholder="Number"
+                >
+
+            </div>
+
+            <button onclick="calculatePercentage()">
+                Calculate
+            </button>
+
+            <div
+                class="result"
+                id="percentageResult"
+            ></div>
+
+            <button
+                class="copy-button"
+                onclick="copyResult('percentageResult')"
+            >
+                Copy Result
+            </button>
+
+        </div>
+
+
+        <div class="calc-box">
+
+            <h2>
+                What percentage is X of Y?
+            </h2>
+
+            <div class="inputs">
+
+                <input
+                    type="number"
+                    id="value1"
+                    placeholder="Value"
+                >
+
+                <span>of</span>
+
+                <input
+                    type="number"
+                    id="value2"
+                    placeholder="Total"
+                >
+
+            </div>
+
+            <button onclick="calculateWhatPercent()">
+                Calculate
+            </button>
+
+            <div
+                class="result"
+                id="whatPercentResult"
+            ></div>
+
+            <button
+                class="copy-button"
+                onclick="copyResult('whatPercentResult')"
+            >
+                Copy Result
+            </button>
+
+        </div>
+
+
+        <div class="calc-box">
+
+            <h2>
+                Percentage Increase / Decrease
+            </h2>
+
+            <div class="inputs">
+
+                <input
+                    type="number"
+                    id="oldValue"
+                    placeholder="Original value"
+                >
+
+                <span>→</span>
+
+                <input
+                    type="number"
+                    id="newValue"
+                    placeholder="New value"
+                >
+
+            </div>
+
+            <button onclick="calculateChange()">
+                Calculate
+            </button>
+
+            <div
+                class="result"
+                id="changeResult"
+            ></div>
+
+            <button
+                class="copy-button"
+                onclick="copyResult('changeResult')"
+            >
+                Copy Result
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     AGE CALCULATOR
+========================= -->
+
+<div
+    id="ageCalculator"
+    class="calculator-page"
+>
+
+    <div class="calculator-container">
+
+        <button
+            class="back-button"
+            onclick="closeAgeCalculator()"
+        >
+            ← Back
+        </button>
+
+        <h1>
+            Age Calculator
+        </h1>
+
+        <p>
+            Calculate your exact age in years, months and days.
+        </p>
+
+
+        <div class="calc-box">
+
+            <h2>
+                Date of Birth
+            </h2>
+
+            <input
+                class="date-input"
+                type="date"
+                id="birthDate"
+            >
+
+
+            <h2 style="margin-top: 25px;">
+                Calculate Age On
+            </h2>
+
+            <input
+                class="date-input"
+                type="date"
+                id="ageOnDate"
+            >
+
+
+            <button
+                onclick="calculateAge()"
+                style="margin-top: 20px;"
+            >
+                Calculate Age
+            </button>
+
+
+            <div
+                class="result"
+                id="ageResult"
+            ></div>
+
+            <button
+                class="copy-button"
+                onclick="copyResult('ageResult')"
+            >
+                Copy Result
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     DATE CALCULATOR
+========================= -->
+
+<div
+    id="dateCalculator"
+    class="calculator-page"
+>
+
+    <div class="calculator-container">
+
+        <button
+            class="back-button"
+            onclick="closeDateCalculator()"
+        >
+            ← Back
+        </button>
+
+        <h1>
+            Date Calculator
+        </h1>
+
+        <p>
+            Add, subtract and calculate the difference between dates.
+        </p>
+
+
+        <div class="calc-box">
+
+            <h2>
+                Add or Subtract From a Date
+            </h2>
+
+            <label>
+                Start Date
+            </label>
+
+            <input
+                class="date-input"
+                type="date"
+                id="startDate"
+            >
+
+
+            <div style="margin-top: 20px;">
+
+                <label>
+                    Operation
+                </label>
+
+                <select
+                    class="date-input"
+                    id="dateOperation"
+                >
+
+                    <option value="add">
+                        Add
+                    </option>
+
+                    <option value="subtract">
+                        Subtract
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div style="margin-top: 20px;">
+
+                <label>
+                    Amount
+                </label>
+
+                <input
+                    class="date-input"
+                    type="number"
+                    id="dateAmount"
+                    placeholder="Enter amount"
+                    min="0"
+                >
+
+            </div>
+
+
+            <div style="margin-top: 20px;">
+
+                <label>
+                    Unit
+                </label>
+
+                <select
+                    class="date-input"
+                    id="dateUnit"
+                >
+
+                    <option value="days">
+                        Days
+                    </option>
+
+                    <option value="weeks">
+                        Weeks
+                    </option>
+
+                    <option value="months">
+                        Months
+                    </option>
+
+                    <option value="years">
+                        Years
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                onclick="calculateDate()"
+                style="margin-top: 20px;"
+            >
+                Calculate
+            </button>
+
+
+            <div
+                class="result"
+                id="dateResult"
+            ></div>
+
+
+            <button
+                class="copy-button"
+                onclick="copyResult('dateResult')"
+            >
+                Copy Result
+            </button>
+
+        </div>
+
+
+        <div class="calc-box">
+
+            <h2>
+                Days Between Two Dates
+            </h2>
+
+
+            <label>
+                Start Date
+            </label>
+
+            <input
+                class="date-input"
+                type="date"
+                id="differenceStart"
+            >
+
+
+            <div style="margin-top: 20px;">
+
+                <label>
+                    End Date
+                </label>
+
+                <input
+                    class="date-input"
+                    type="date"
+                    id="differenceEnd"
+                >
+
+            </div>
+
+
+            <button
+                onclick="calculateDateDifference()"
+                style="margin-top: 20px;"
+            >
+                Calculate Difference
+            </button>
+
+
+            <div
+                class="result"
+                id="differenceResult"
+            ></div>
+
+
+            <button
+                class="copy-button"
+                onclick="copyResult('differenceResult')"
+            >
+                Copy Result
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     TIME CONVERTER
+========================= -->
+
+<div
+    id="timeConverter"
+    class="calculator-page"
+>
+
+    <div class="calculator-container">
+
+        <button
+            class="back-button"
+            onclick="closeTimeConverter()"
+        >
+            ← Back
+        </button>
+
+        <h1>
+            Time Converter
+        </h1>
+
+        <p>
+            Convert time units quickly and easily.
+        </p>
+
+
+        <div class="calc-box">
+
+            <h2>
+                Convert Time
+            </h2>
+
+            <div class="inputs">
+
+                <input
+                    type="number"
+                    id="timeValue"
+                    placeholder="Enter value"
+                    min="0"
+                >
+
+                <select
+                    class="unit-select"
+                    id="timeFrom"
+                >
+
+                    <option value="seconds">
+                        Seconds
+                    </option>
+
+                    <option value="minutes">
+                        Minutes
+                    </option>
+
+                    <option value="hours">
+                        Hours
+                    </option>
+
+                    <option value="days">
+                        Days
+                    </option>
+
+                    <option value="weeks">
+                        Weeks
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="convert-arrow">
+                ↓
+            </div>
+
+
+            <select
+                class="unit-select full-width"
+                id="timeTo"
+            >
+
+                <option value="seconds">
+                    Seconds
+                </option>
+
+                <option value="minutes">
+                    Minutes
+                </option>
+
+                <option value="hours">
+                    Hours
+                </option>
+
+                <option value="days">
+                    Days
+                </option>
+
+                <option value="weeks">
+                    Weeks
+                </option>
+
+            </select>
+
+
+            <button
+                onclick="convertTime()"
+                style="margin-top: 20px;"
+            >
+                Convert
+            </button>
+
+
+            <div
+                class="result"
+                id="timeResult"
+            ></div>
+
+
+            <button
+                class="copy-button"
+                onclick="copyResult('timeResult')"
+            >
+                Copy Result
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     WEIGHT CONVERTER
+========================= -->
+
+<div
+    id="weightConverter"
+    class="calculator-page"
+>
+
+    <div class="calculator-container">
+
+        <button
+            class="back-button"
+            onclick="closeWeightConverter()"
+        >
+            ← Back
+        </button>
+
+        <h1>
+            Weight Converter
+        </h1>
+
+        <p>
+            Convert kilograms, grams, pounds, ounces and more.
+        </p>
+
+
+        <div class="calc-box">
+
+            <h2>
+                Convert Weight
+            </h2>
+
+
+            <div class="inputs">
+
+                <input
+                    type="number"
+                    id="weightValue"
+                    placeholder="Enter value"
+                >
+
+
+                <select
+                    class="unit-select"
+                    id="weightFrom"
+                >
+
+                    <option value="grams">
+                        Grams
+                    </option>
+
+                    <option value="kilograms">
+                        Kilograms
+                    </option>
+
+                    <option value="milligrams">
+                        Milligrams
+                    </option>
+
+                    <option value="pounds">
+                        Pounds
+                    </option>
+
+                    <option value="ounces">
+                        Ounces
+                    </option>
+
+                    <option value="stones">
+                        Stones
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="convert-arrow">
+                ↓
+            </div>
+
+
+            <select
+                class="unit-select full-width"
+                id="weightTo"
+            >
+
+                <option value="grams">
+                    Grams
+                </option>
+
+                <option value="kilograms">
+                    Kilograms
+                </option>
+
+                <option value="milligrams">
+                    Milligrams
+                </option>
+
+                <option value="pounds">
+                    Pounds
+                </option>
+
+                <option value="ounces">
+                    Ounces
+                </option>
+
+                <option value="stones">
+                    Stones
+                </option>
+
+            </select>
+
+
+            <button
+                onclick="convertWeight()"
+                style="margin-top: 20px;"
+            >
+                Convert
+            </button>
+
+
+            <div
+                class="result"
+                id="weightResult"
+            ></div>
+
+
+            <button
+                class="copy-button"
+                onclick="copyResult('weightResult')"
+            >
+                Copy Result
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     LENGTH CONVERTER
+========================= -->
+
+<div
+    id="lengthConverter"
+    class="calculator-page"
+>
+
+    <div class="calculator-container">
+
+        <button
+            class="back-button"
+            onclick="closeLengthConverter()"
+        >
+            ← Back
+        </button>
+
+        <h1>
+            Length Converter
+        </h1>
+
+        <p>
+            Convert meters, kilometers, miles, feet, inches and more.
+        </p>
+
+
+        <div class="calc-box">
+
+            <h2>
+                Convert Length
+            </h2>
+
+
+            <div class="inputs">
+
+                <input
+                    type="number"
+                    id="lengthValue"
+                    placeholder="Enter value"
+                >
+
+
+                <select
+                    class="unit-select"
+                    id="lengthFrom"
+                >
+
+                    <option value="millimeters">
+                        Millimeters
+                    </option>
+
+                    <option value="centimeters">
+                        Centimeters
+                    </option>
+
+                    <option value="meters">
+                        Meters
+                    </option>
+
+                    <option value="kilometers">
+                        Kilometers
+                    </option>
+
+                    <option value="inches">
+                        Inches
+                    </option>
+
+                    <option value="feet">
+                        Feet
+                    </option>
+
+                    <option value="yards">
+                        Yards
+                    </option>
+
+                    <option value="miles">
+                        Miles
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="convert-arrow">
+                ↓
+            </div>
+
+
+            <select
+                class="unit-select full-width"
+                id="lengthTo"
+            >
+
+                <option value="millimeters">
+                    Millimeters
+                </option>
+
+                <option value="centimeters">
+                    Centimeters
+                </option>
+
+                <option value="meters">
+                    Meters
+                </option>
+
+                <option value="kilometers">
+                    Kilometers
+                </option>
+
+                <option value="inches">
+                    Inches
+                </option>
+
+                <option value="feet">
+                    Feet
+                </option>
+
+                <option value="yards">
+                    Yards
+                </option>
+
+                <option value="miles">
+                    Miles
+                </option>
+
+            </select>
+
+
+            <button
+                onclick="convertLength()"
+                style="margin-top: 20px;"
+            >
+                Convert
+            </button>
+
+
+            <div
+                class="result"
+                id="lengthResult"
+            ></div>
+
+
+            <button
+                class="copy-button"
+                onclick="copyResult('lengthResult')"
+            >
+                Copy Result
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <div class="container">
+        © 2026 Calcly. Simple tools for everyone.
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   NAVIGATION
+========================= */
+
+function hideAllCalculators() {
+
+    document.getElementById("percentageCalculator").style.display = "none";
+
+    document.getElementById("ageCalculator").style.display = "none";
+
+    document.getElementById("dateCalculator").style.display = "none";
+
+    document.getElementById("timeConverter").style.display = "none";
+
+    document.getElementById("weightConverter").style.display = "none";
+
+    document.getElementById("lengthConverter").style.display = "none";
+
+}
+
+
+function openPercentageCalculator() {
+
+    document.getElementById("homePage").style.display = "none";
+
+    hideAllCalculators();
+
+    document.getElementById("percentageCalculator").style.display = "block";
+
+    window.scrollTo(0, 0);
+
+}
+
+
+function closePercentageCalculator() {
+
+    document.getElementById("percentageCalculator").style.display = "none";
+
+    document.getElementById("homePage").style.display = "block";
+
+    window.scrollTo(0, 0);
+
+}
+
+
+function openAgeCalculator() {
+
+    document.getElementById("homePage").style.display = "none";
+
+    hideAllCalculators();
+
+    document.getElementById("ageCalculator").style.display = "block";
+
+    window.scrollTo(0, 0);
+
+}
+
+
+function closeAgeCalculator() {
+
+    document.getElementById("ageCalculator").style.display = "none";
+
+    document.getElementById("homePage").style.display = "block";
+
+    window.scrollTo(0, 0);
+
+}
+
+
+function openDateCalculator() {
+
+    document.getElementById("homePage").style.display = "none";
+
+    hideAllCalculators();
+
+    document.getElementById("dateCalculator").style.display = "block";
+
+    window.scrollTo(0, 0);
+
+}
+
+
+function closeDateCalculator() {
+
+    document.getElementById("dateCalculator").style.display = "none";
+
+    document.getElementById("homePage").style.display = "block";
+
+    window.scrollTo(0, 0);
+
+}
+
+
+function openTimeConverter() {
+
+    document.getElementById("homePage").style.display = "none";
+
+    hideAllCalculators();
+
+    document.getElementById("timeConverter").style.display = "block";
+
+    window.scrollTo(0, 0);
+
+}
+
+
+function closeTimeConverter() {
+
+    document.getElementById("timeConverter").style.display = "none";
+
+    document.getElementById("homePage").style.display = "block";
+
+    window.scrollTo(0, 0);
+
+}
+
+
+function openWeightConverter() {
+
+    document.getElementById("homePage").style.display = "none";
+
+    hideAllCalculators();
+
+    document.getElementById("weightConverter").style.display = "block";
+
+    window.scrollTo(0, 0);
+
+}
+
+
+function closeWeightConverter() {
+
+    document.getElementById("weightConverter").style.display = "none";
+
+    document.getElementById("homePage").style.display = "block";
+
+    window.scrollTo(0, 0);
+
+}
+
+
+function openLengthConverter() {
+
+    document.getElementById("homePage").style.display = "none";
+
+    hideAllCalculators();
+
+    document.getElementById("lengthConverter").style.display = "block";
+
+    window.scrollTo(0, 0);
+
+}
+
+
+function closeLengthConverter() {
+
+    document.getElementById("lengthConverter").style.display = "none";
+
+    document.getElementById("homePage").style.display = "block";
+
+    window.scrollTo(0, 0);
+
+}
+
+
+/* =========================
+   PERCENTAGE
+========================= */
+
+function calculatePercentage() {
+
+    const percent =
+        Number(document.getElementById("percent").value);
+
+    const number =
+        Number(document.getElementById("number").value);
+
+
+    if (
+        document.getElementById("percent").value === "" ||
+        document.getElementById("number").value === ""
+    ) {
+
+        document.getElementById("percentageResult").innerText =
+            "Please enter both values.";
+
+        return;
+
+    }
+
+
+    const result =
+        (percent / 100) * number;
+
+
+    document.getElementById("percentageResult").innerText =
+        `${percent}% of ${number} = ${result}`;
+
+}
+
+
+function calculateWhatPercent() {
+
+    const value1 =
+        Number(document.getElementById("value1").value);
+
+    const value2 =
+        Number(document.getElementById("value2").value);
+
+
+    if (
+        document.getElementById("value1").value === "" ||
+        document.getElementById("value2").value === ""
+    ) {
+
+        document.getElementById("whatPercentResult").innerText =
+            "Please enter both values.";
+
+        return;
+
+    }
+
+
+    if (value2 === 0) {
+
+        document.getElementById("whatPercentResult").innerText =
+            "Cannot divide by zero.";
+
+        return;
+
+    }
+
+
+    const result =
+        (value1 / value2) * 100;
+
+
+    document.getElementById("whatPercentResult").innerText =
+        `${value1} is ${result.toFixed(2)}% of ${value2}`;
+
+}
+
+
+function calculateChange() {
+
+    const oldValue =
+        Number(document.getElementById("oldValue").value);
+
+    const newValue =
+        Number(document.getElementById("newValue").value);
+
+
+    if (
+        document.getElementById("oldValue").value === "" ||
+        document.getElementById("newValue").value === ""
+    ) {
+
+        document.getElementById("changeResult").innerText =
+            "Please enter both values.";
+
+        return;
+
+    }
+
+
+    if (oldValue === 0) {
+
+        document.getElementById("changeResult").innerText =
+            "Original value cannot be zero.";
+
+        return;
+
+    }
+
+
+    const change =
+        ((newValue - oldValue) / oldValue) * 100;
+
+
+    if (change > 0) {
+
+        document.getElementById("changeResult").innerText =
+            `Increase: ${change.toFixed(2)}%`;
+
+    }
+
+    else if (change < 0) {
+
+        document.getElementById("changeResult").innerText =
+            `Decrease: ${Math.abs(change).toFixed(2)}%`;
+
+    }
+
+    else {
+
+        document.getElementById("changeResult").innerText =
+            "No change: 0%";
+
+    }
+
+}
+
+
+/* =========================
+   AGE
+========================= */
+
+function calculateAge() {
+
+    const birthInput =
+        document.getElementById("birthDate");
+
+    const ageOnInput =
+        document.getElementById("ageOnDate");
+
+
+    if (
+        birthInput.value === "" ||
+        ageOnInput.value === ""
+    ) {
+
+        document.getElementById("ageResult").innerText =
+            "Please select both dates.";
+
+        return;
+
+    }
+
+
+    const birthDate =
+        new Date(birthInput.value + "T00:00:00");
+
+    const ageOnDate =
+        new Date(ageOnInput.value + "T00:00:00");
+
+
+    if (ageOnDate < birthDate) {
+
+        document.getElementById("ageResult").innerText =
+            "The calculation date cannot be before the birth date.";
+
+        return;
+
+    }
+
+
+    let years =
+        ageOnDate.getFullYear() -
+        birthDate.getFullYear();
+
+    let months =
+        ageOnDate.getMonth() -
+        birthDate.getMonth();
+
+    let days =
+        ageOnDate.getDate() -
+        birthDate.getDate();
+
+
+    if (days < 0) {
+
+        months--;
+
+        const previousMonth =
+            new Date(
+                ageOnDate.getFullYear(),
+                ageOnDate.getMonth(),
+                0
+            );
+
+        days += previousMonth.getDate();
+
+    }
+
+
+    if (months < 0) {
+
+        years--;
+
+        months += 12;
+
+    }
+
+
+    document.getElementById("ageResult").innerText =
+        `Your age is ${years} years, ${months} months and ${days} days.`;
+
+}
+
+
+/* =========================
+   DATE
+========================= */
+
+function calculateDate() {
+
+    const startInput =
+        document.getElementById("startDate");
+
+    const amount =
+        Number(document.getElementById("dateAmount").value);
+
+    const operation =
+        document.getElementById("dateOperation").value;
+
+    const unit =
+        document.getElementById("dateUnit").value;
+
+
+    if (
+        startInput.value === "" ||
+        document.getElementById("dateAmount").value === ""
+    ) {
+
+        document.getElementById("dateResult").innerText =
+            "Please enter a date and amount.";
+
+        return;
+
+    }
+
+
+    if (amount < 0) {
+
+        document.getElementById("dateResult").innerText =
+            "Amount cannot be negative.";
+
+        return;
+
+    }
+
+
+    const date =
+        new Date(startInput.value + "T00:00:00");
+
+    const direction =
+        operation === "add" ? 1 : -1;
+
+
+    if (unit === "days") {
+
+        date.setDate(
+            date.getDate() + amount * direction
+        );
+
+    }
+
+    else if (unit === "weeks") {
+
+        date.setDate(
+            date.getDate() + amount * 7 * direction
+        );
+
+    }
+
+    else if (unit === "months") {
+
+        date.setMonth(
+            date.getMonth() + amount * direction
+        );
+
+    }
+
+    else if (unit === "years") {
+
+        date.setFullYear(
+            date.getFullYear() + amount * direction
+        );
+
+    }
+
+
+    document.getElementById("dateResult").innerText =
+        `Result: ${formatDate(date)}`;
+
+}
+
+
+function calculateDateDifference() {
+
+    const start =
+        new Date(
+            document.getElementById("differenceStart").value
+            + "T00:00:00"
+        );
+
+    const end =
+        new Date(
+            document.getElementById("differenceEnd").value
+            + "T00:00:00"
+        );
+
+
+    if (
+        isNaN(start) ||
+        isNaN(end)
+    ) {
+
+        document.getElementById("differenceResult").innerText =
+            "Please select both dates.";
+
+        return;
+
+    }
+
+
+    const days =
+        Math.round(
+            Math.abs(end - start) /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    document.getElementById("differenceResult").innerText =
+        `${days} days`;
+
+}
+
+
+/* =========================
+   TIME
+========================= */
+
+function convertTime() {
+
+    const input =
+        document.getElementById("timeValue");
+
+    if (input.value === "") {
+
+        document.getElementById("timeResult").innerText =
+            "Please enter a value.";
+
+        return;
+
+    }
+
+
+    const value =
+        Number(input.value);
+
+    const from =
+        document.getElementById("timeFrom").value;
+
+    const to =
+        document.getElementById("timeTo").value;
+
+
+    const units = {
+
+        seconds: 1,
+
+        minutes: 60,
+
+        hours: 3600,
+
+        days: 86400,
+
+        weeks: 604800
+
+    };
+
+
+    const result =
+        (value * units[from]) / units[to];
+
+
+    document.getElementById("timeResult").innerText =
+        `${value} ${from} = ${formatNumber(result)} ${to}`;
+
+}
+
+
+/* =========================
+   WEIGHT
+========================= */
+
+function convertWeight() {
+
+    const input =
+        document.getElementById("weightValue");
+
+
+    if (input.value === "") {
+
+        document.getElementById("weightResult").innerText =
+            "Please enter a value.";
+
+        return;
+
+    }
+
+
+    const value =
+        Number(input.value);
+
+    const from =
+        document.getElementById("weightFrom").value;
+
+    const to =
+        document.getElementById("weightTo").value;
+
+
+    const units = {
+
+        milligrams: 0.000001,
+
+        grams: 0.001,
+
+        kilograms: 1,
+
+        pounds: 0.45359237,
+
+        ounces: 0.028349523125,
+
+        stones: 6.35029318
+
+    };
+
+
+    const kilograms =
+        value * units[from];
+
+
+    const result =
+        kilograms / units[to];
+
+
+    document.getElementById("weightResult").innerText =
+        `${value} ${from} = ${formatNumber(result)} ${to}`;
+
+}
+
+
+/* =========================
+   LENGTH
+========================= */
+
+function convertLength() {
+
+    const input =
+        document.getElementById("lengthValue");
+
+
+    if (input.value === "") {
+
+        document.getElementById("lengthResult").innerText =
+            "Please enter a value.";
+
+        return;
+
+    }
+
+
+    const value =
+        Number(input.value);
+
+    const from =
+        document.getElementById("lengthFrom").value;
+
+    const to =
+        document.getElementById("lengthTo").value;
+
+
+    const units = {
+
+        millimeters: 0.001,
+
+        centimeters: 0.01,
+
+        meters: 1,
+
+        kilometers: 1000,
+
+        inches: 0.0254,
+
+        feet: 0.3048,
+
+        yards: 0.9144,
+
+        miles: 1609.344
+
+    };
+
+
+    const meters =
+        value * units[from];
+
+
+    const result =
+        meters / units[to];
+
+
+    document.getElementById("lengthResult").innerText =
+        `${value} ${from} = ${formatNumber(result)} ${to}`;
+
+}
+
+
+/* =========================
+   HELPERS
+========================= */
+
+function formatNumber(number) {
+
+    if (Number.isInteger(number)) {
+
+        return number.toString();
+
+    }
+
+    return number
+        .toFixed(8)
+        .replace(/\.?0+$/, "");
+
+}
+
+
+function formatDate(date) {
+
+    return date.toLocaleDateString(
+        "en-US",
+        {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        }
+    );
+
+}
+
+
+function copyResult(id) {
+
+    const result =
+        document.getElementById(id).innerText;
+
+
+    if (!result) return;
+
+
+    navigator.clipboard.writeText(result);
+
+    alert("Result copied!");
+
+}
+
+</script>
+
+
+</body>
+
+</html>
